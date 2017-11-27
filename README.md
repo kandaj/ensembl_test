@@ -31,3 +31,20 @@ npm install
 
 `npm test` *server should be running to test the application
 
+
+## Application
+
+Once the server is started sucessfully the applcation will be running under port 5000 and
+can be accessed by the follwoing URL 
+- [http://localhost:5000/](http://localhost:5000/)
+
+### Gene Suggest Web Service
+- [http://localhost:5000/gene_suggest](http://localhost:5000/gene_suggest)
+
+List of parameters
+
+- query  -search characters
+- species
+- limit -number
+
+Ex: [http://localhost:5000/gene_suggest?query=BRCA&species=homo_sapiens&limit=10](http://localhost:5000/gene_suggest?query=BRCA&species=homo_sapiens&limit=10)
