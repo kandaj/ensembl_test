@@ -16,18 +16,18 @@ cd ensembl_test
 
 npm install
 
-sudo npm install forever -g
 ```
 
 ### To start sever run the following command:
 
-`forever start src/server.js`
+`npm start`
 
 
 ### To stop the server:
 
-`forever stop src/server.js`
+`Terminate Ctrl + C`
 
 ### To test the application:
 
-`npm test`
+`npm test` *server should be running to test the application
+
