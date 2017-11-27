@@ -6,7 +6,8 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mysql": "^2.5.4",
-    "underscore": "1.8.3"
+    "underscore": "1.8.3",
+    "forever": "0.15.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",

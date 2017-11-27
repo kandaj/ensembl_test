@@ -16,26 +16,46 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-var expect  = require("chai").expect;
+var expect  = require("chai").expect,
+    assert = require("chai").assert;
 var request = require("request");
 
 
-describe("gene_suggest", function() {
+describe("gene_suggest search 'query=a&species=homo_sapiens&limit=10'", function() {
     var url = "http://localhost:5000/gene_suggest?query=a&species=homo_sapiens&limit=10";
 
-    it("returns status 200", function(done) {
+    it("should return status 200", function(done) {
         request(url, function(error, response, body) {
             expect(response.statusCode).to.equal(200);
             done();
         });
     });
-    it("returns with 10 gene names", function(done) {
+    it("should return with 10 gene name suggestions", function(done) {
         request(url, function (error, response, body) {
             // parsed response body as js object
             var data = JSON.parse(body)
             expect(data).to.be.an('Array');
-            // raw response
-            // console.log(response);
+            assert.lengthOf(data[0].data, 10, 'string has length of 10');
+            done();
+        });
+    });
+});
+
+describe("gene_suggest search 'query=brca&species=homo_sapiens&limit=10'", function() {
+    var url = "http://localhost:5000/gene_suggest?query=brca&species=homo_sapiens&limit=10";
+
+    it("should return status 200", function(done) {
+        request(url, function(error, response, body) {
+            expect(response.statusCode).to.equal(200);
+            done();
+        });
+    });
+    it("should return with 2 gene name suggestions", function(done) {
+        request(url, function (error, response, body) {
+            // parsed response body as js object
+            var data = JSON.parse(body)
+            expect(data).to.be.an('Array');
+            assert.lengthOf(data[0].data, 2, 'string has length of 2');
             done();
         });
     });

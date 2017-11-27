@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#gene").keyup(function(){
+               var val = $("#gene").val();
+               if(val){
+                   $.ajax({
+                       url: "/gene_suggest?query="+val+"&species=homo_sapiens&limit=10",
+                       type: "GET",
+                       contentType: "application/json",
+                       success: function(data){
+                           $( "#gene" ).autocomplete({
+                               source: data[0].data
+                           });
+                       }
+                   });
+               }
+
+            });
+        });
+    </script>
+</head>
+<body>
+<div>
+   <h2>Gene Suggest Web Service:</h2>
+    <h3><a href="#">http://localhost:5000/gene_suggest</a></h3>
+    <h4>List of parameters</h4>
+    <ul>
+        <li>query - search characters</li>
+        <li>species </li>
+        <li>limit - number</li>
+    </ul>
+    <h3>ex: <a href="http://localhost:5000/gene_suggest?query=BRCA&species=homo_sapiens&limit=10">http://localhost:5000/gene_suggest?query=BRCA&species=homo_sapiens&limit=10</a></h3>
+</div>
+<div class="ui-widget">
+    <label for="gene">Gene: </label>
+    <input id="gene">
+</div>
+</body>
+</html>
