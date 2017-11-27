@@ -43,8 +43,8 @@ can be accessed by the follwoing URL
 
 List of parameters
 
-- query  -search characters
-- species
-- limit -number
+- query   -the partial query typed by the user, ex: brc
+- species -the name of the target species, ex: homo_sapiens
+- limit   -the maximum number of suggestions to return, ex: 10
 
 Ex: [http://localhost:5000/gene_suggest?query=BRCA&species=homo_sapiens&limit=10](http://localhost:5000/gene_suggest?query=BRCA&species=homo_sapiens&limit=10)
