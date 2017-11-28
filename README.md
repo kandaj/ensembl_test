@@ -1,4 +1,4 @@
-# Ensembl Test
+# Ensembl Test [![Build Status](https://travis-ci.org/kandaj/ensembl_test.svg?branch=master)](https://travis-ci.org/kandaj/ensembl_test/)
 
 ### Prerequisites:
 
