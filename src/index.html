@@ -5,7 +5,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            document.getElementById("webServiceUrl").innerHTML= location.hostname+'/gene_suggest';
+            document.getElementById("webServiceUrl").innerHTML= location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '')+'/gene_suggest';
             $("#gene").keyup(function(){
                var val = $("#gene").val();
                if(val){
